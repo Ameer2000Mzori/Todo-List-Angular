@@ -3,7 +3,7 @@
 <li>{{ item.name }}</li>
 <li>{{ item.id }}</li>
 <button (click)="deleteItem(item.id)">delete</button>
-
+<button (click)="saveToFavo(item)">save</button>
 } @empty {
 <li>There are no items.</li>
 }

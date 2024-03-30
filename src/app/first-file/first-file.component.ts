@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { todoData } from './data';
+import { TodoItem, todoData } from './data';
 
 @Component({
   selector: 'app-first-file',
@@ -11,11 +11,19 @@ import { todoData } from './data';
 })
 export class FirstFileComponent {
   newTodoData = todoData;
+
+  savedData: TodoItem[] = [];
+
   logData() {
     console.log(this.newTodoData);
   }
 
   deleteItem(id: number) {
     this.newTodoData = this.newTodoData.filter((item) => item.id !== id);
+  }
+
+  saveToFavo(data: any) {
+    console.log(data);
+    this.savedData.push(data);
   }
 }

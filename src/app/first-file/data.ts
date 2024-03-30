@@ -1,5 +1,5 @@
 // type script object interface
-interface TodoItem {
+export interface TodoItem {
   id: number;
   name: string;
   email: string;
@@ -27,3 +27,5 @@ export const todoData: TodoItem[] = [
     password: '<PASSWORD>',
   },
 ];
+
+// save data interface
