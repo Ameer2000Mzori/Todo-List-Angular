@@ -4,8 +4,10 @@
   <div class="itemCard" [class.compo]="item.isCompleted">
     <p>{{ item.id }} , {{ item.name }}</p>
     <div style="display: flex; flex-direction: column; gap: 5px">
+      <button (click)="completed(item)">
+        {{ item.isCompleted ? "done" : "not done" }}
+      </button>
       <button (click)="deleteItem(item.id)">delete</button>
-      <button (click)="saveToFavo(item)">save</button>
     </div>
   </div>
   } @empty {

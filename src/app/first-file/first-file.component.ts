@@ -12,7 +12,7 @@ import { TodoItem, todoData } from './data';
 export class FirstFileComponent {
   newTodoData = todoData;
 
-  savedData: TodoItem[] = [];
+  // savedData: TodoItem[] = [];
 
   logData() {
     console.log(this.newTodoData);
@@ -22,9 +22,12 @@ export class FirstFileComponent {
     this.newTodoData = this.newTodoData.filter((item) => item.id !== id);
   }
 
-  saveToFavo(data: any) {
-    console.log(data);
-    this.savedData.push(data);
-    console.log(this.savedData);
+  completed(data: any) {
+    this.newTodoData.forEach((item) => {
+      if (item.id === data.id) {
+        item.isCompleted = !item.isCompleted;
+      }
+    });
+    console.log('after update', this.newTodoData);
   }
 }
