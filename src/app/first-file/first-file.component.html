@@ -1,20 +1,12 @@
 <p>first-file works!</p>
 <div class="itemsHolder">
-  @for (item of newTodoData; track item.name ) {
-  <div class="itemCard">
-    @if(item.isCompleted){
-    <div class="completedItem">
-      <p>{{ item.id }} , {{ item.name }}</p>
+  @for (item of newTodoData; track item.id ) {
+  <div class="itemCard" [class.compo]="item.isCompleted">
+    <p>{{ item.id }} , {{ item.name }}</p>
+    <div style="display: flex; flex-direction: column; gap: 5px">
       <button (click)="deleteItem(item.id)">delete</button>
       <button (click)="saveToFavo(item)">save</button>
     </div>
-    }@else{
-    <div class="completedItem notCompelete">
-      <p>{{ item.id }} , {{ item.name }}</p>
-      <button (click)="deleteItem(item.id)">delete</button>
-      <button (click)="saveToFavo(item)">save</button>
-    </div>
-    }
   </div>
   } @empty {
   <p>There are no items.</p>
