@@ -4,6 +4,7 @@ export interface TodoItem {
   name: string;
   email: string;
   password: string;
+  isCompleted: boolean;
 }
 
 // use of typescript interface with todoItem
@@ -13,18 +14,21 @@ export const todoData: TodoItem[] = [
     name: '<NAME>',
     email: '<EMAIL>',
     password: '<PASSWORD>',
+    isCompleted: true,
   },
   {
     id: 2,
     name: '<NAME>',
     email: '<EMAIL>',
     password: '<PASSWORD>',
+    isCompleted: false,
   },
   {
     id: 3,
     name: '<NAME>',
     email: '<EMAIL>',
     password: '<PASSWORD>',
+    isCompleted: false,
   },
 ];
 

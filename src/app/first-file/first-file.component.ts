@@ -25,5 +25,6 @@ export class FirstFileComponent {
   saveToFavo(data: any) {
     console.log(data);
     this.savedData.push(data);
+    console.log(this.savedData);
   }
 }

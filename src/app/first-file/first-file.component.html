@@ -1,9 +1,20 @@
 <p>first-file works!</p>
-@for (item of newTodoData; track item.name) {
-<li>{{ item.name }}</li>
-<li>{{ item.id }}</li>
-<button (click)="deleteItem(item.id)">delete</button>
-<button (click)="saveToFavo(item)">save</button>
-} @empty {
-<li>There are no items.</li>
-}
+<div class="itemsHolder">
+  @for (item of newTodoData; track item.name ) {
+  <!--  -->
+  @if(item.isCompleted === true){
+  <div class="completedItem">
+    <p>{{ item.name }}</p>
+    <p>{{ item.id }}</p>
+    <button (click)="deleteItem(item.id)">delete</button>
+    <button (click)="saveToFavo(item)">save</button>
+  </div>
+  }@else {
+  <p>{{ item.name }}</p>
+  <p>{{ item.id }}</p>
+  <button (click)="deleteItem(item.id)">delete</button>
+  <button (click)="saveToFavo(item)">save</button>
+  } } @empty {
+  <p>There are no items.</p>
+  }
+</div>
