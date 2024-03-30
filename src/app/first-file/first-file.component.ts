@@ -14,4 +14,8 @@ export class FirstFileComponent {
   logData() {
     console.log(this.newTodoData);
   }
+
+  deleteItem(id: number) {
+    this.newTodoData = this.newTodoData.filter((item) => item.id !== id);
+  }
 }
