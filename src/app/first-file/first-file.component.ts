@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { todoData } from './data';
 
 @Component({
   selector: 'app-first-file',
@@ -8,4 +9,9 @@ import { AppComponent } from '../app.component';
   templateUrl: './first-file.component.html',
   styleUrl: './first-file.component.scss',
 })
-export class FirstFileComponent {}
+export class FirstFileComponent {
+  newTodoData = todoData;
+  logData() {
+    console.log(this.newTodoData);
+  }
+}

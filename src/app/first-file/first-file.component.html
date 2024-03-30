@@ -1,1 +1,7 @@
 <p>first-file works!</p>
+@for (item of newTodoData; track item.name) {
+<li>{{ item.name }}</li>
+<li>{{ item.id }}</li>
+} @empty {
+<li>There are no items.</li>
+}
