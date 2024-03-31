@@ -1,8 +1,8 @@
 <p>first-file works!</p>
 <div class="itemsHolder">
-  @for (item of newTodoData; track item.id ) {
-  <div class="itemCard" [class.compo]="item.isCompleted">
-    <p>{{ item.id }} , {{ item.name }}</p>
+  @for (item of newTodoData; track item.id; let odd = $odd) {
+  <div class="itemCard" [class.Odd]="odd" [class.compo]="item.isCompleted">
+    <p>{{ item.id }} , {{ item.todo }}</p>
     <div style="display: flex; flex-direction: column; gap: 5px">
       <button (click)="completed(item)">
         {{ item.isCompleted ? "done" : "not done" }}
@@ -14,3 +14,5 @@
   <p>There are no items.</p>
   }
 </div>
+<input [(ngModel)]="newTodo" type="text" />
+<button (click)="addItem()">Add Item</button>

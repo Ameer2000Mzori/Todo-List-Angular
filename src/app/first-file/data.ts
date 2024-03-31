@@ -1,9 +1,7 @@
 // type script object interface
 export interface TodoItem {
   id: number;
-  name: string;
-  email: string;
-  password: string;
+  todo: string;
   isCompleted: boolean;
 }
 
@@ -11,23 +9,17 @@ export interface TodoItem {
 export const todoData: TodoItem[] = [
   {
     id: 1,
-    name: '<NAME>',
-    email: '<EMAIL>',
-    password: '<PASSWORD>',
+    todo: '<NAME>',
     isCompleted: true,
   },
   {
     id: 2,
-    name: '<NAME>',
-    email: '<EMAIL>',
-    password: '<PASSWORD>',
+    todo: '<NAME>',
     isCompleted: false,
   },
   {
     id: 3,
-    name: '<NAME>',
-    email: '<EMAIL>',
-    password: '<PASSWORD>',
+    todo: '<NAME>',
     isCompleted: false,
   },
 ];

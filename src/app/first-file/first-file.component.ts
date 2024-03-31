@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { TodoItem, todoData } from './data';
-
+import { todoData } from './data';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-first-file',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './first-file.component.html',
   styleUrl: './first-file.component.scss',
 })
 export class FirstFileComponent {
   newTodoData = todoData;
-
-  // savedData: TodoItem[] = [];
 
   logData() {
     console.log(this.newTodoData);
@@ -29,5 +27,17 @@ export class FirstFileComponent {
       }
     });
     console.log('after update', this.newTodoData);
+  }
+
+  // new text
+  newTodo: any;
+
+  addItem() {
+    this.newTodoData.push({
+      id: this.newTodoData.length + 1,
+      todo: this.newTodo,
+      isCompleted: false,
+    });
+    (this.newTodo = ''), console.log('after add', this.newTodoData);
   }
 }
