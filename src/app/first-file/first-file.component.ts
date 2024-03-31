@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AppComponent } from '../app.component';
+import * as uuid from 'uuid';
+
 import { todoData } from './data';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -16,7 +17,7 @@ export class FirstFileComponent {
     console.log(this.newTodoData);
   }
 
-  deleteItem(id: number) {
+  deleteItem(id: string) {
     this.newTodoData = this.newTodoData.filter((item) => item.id !== id);
   }
 
@@ -30,11 +31,11 @@ export class FirstFileComponent {
   }
 
   // new text
-  newTodo: any;
+  newTodo: string = '';
 
   addItem() {
     this.newTodoData.push({
-      id: this.newTodoData.length + 1,
+      id: uuid.v4(),
       todo: this.newTodo,
       isCompleted: false,
     });

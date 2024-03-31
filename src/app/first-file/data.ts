@@ -1,6 +1,6 @@
 // type script object interface
 export interface TodoItem {
-  id: number;
+  id: string;
   todo: string;
   isCompleted: boolean;
 }
@@ -8,17 +8,17 @@ export interface TodoItem {
 // use of typescript interface with todoItem
 export const todoData: TodoItem[] = [
   {
-    id: 1,
+    id: '1',
     todo: '<NAME>',
     isCompleted: true,
   },
   {
-    id: 2,
+    id: '2',
     todo: '<NAME>',
     isCompleted: false,
   },
   {
-    id: 3,
+    id: '3',
     todo: '<NAME>',
     isCompleted: false,
   },

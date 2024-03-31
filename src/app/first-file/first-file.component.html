@@ -2,7 +2,13 @@
 <div class="itemsHolder">
   @for (item of newTodoData; track item.id; let odd = $odd) {
   <div class="itemCard" [class.Odd]="odd" [class.compo]="item.isCompleted">
-    <p>{{ item.id }} , {{ item.todo }}</p>
+    <div>
+      <p>{{ item.todo }}</p>
+      <div class="items-id">
+        i
+        <p class="item-id">{{ item.id }}</p>
+      </div>
+    </div>
     <div style="display: flex; flex-direction: column; gap: 5px">
       <button (click)="completed(item)">
         {{ item.isCompleted ? "done" : "not done" }}
