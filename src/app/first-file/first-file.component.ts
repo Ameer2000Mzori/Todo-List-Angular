@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import * as uuid from 'uuid';
 import { todoData } from './data';
 import { FormsModule } from '@angular/forms';
+import { ChildFileComponent } from './child-file/child-file.component';
 @Component({
   selector: 'app-first-file',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ChildFileComponent],
   templateUrl: './first-file.component.html',
   styleUrl: './first-file.component.scss',
 })
