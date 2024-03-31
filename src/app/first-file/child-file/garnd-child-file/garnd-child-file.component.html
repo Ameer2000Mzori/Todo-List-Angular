@@ -1,7 +1,13 @@
 <p>garnd-child-file works!</p>
 
 @switch (color) { @case ("red") {
-<div [ngClass]="checkColor(color)">Red</div>
+<div [ngStyle]="checkColor(color)">Red</div>
 } @case ("blue") {
-<div [ngClass]="checkColor(color)">Blue</div>
+<div [ngStyle]="checkColor(color)">Blue</div>
 } }
+
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Red Text</div>
+  <div *ngSwitchCase="'blue'">Blue Text</div>
+  <div *ngSwitchDefault>Default Text</div>
+</div>
