@@ -16,7 +16,10 @@ export class FirstFileComponent {
 
   deleteItem(todoID: string) {
     console.log('id we got in the parent ', todoID);
+    console.log(this.newTodoData);
+    // if (this.newTodoData) {
     this.newTodoData = this.newTodoData.filter((item) => item.id !== todoID);
+    // }
   }
 
   ngOnInit() {
