@@ -1,0 +1,15 @@
+<div class="itemCard" [class.Odd]="oddEl" [class.compo]="isCompletedEl">
+  <div>
+    <p>{{ itemData.todo }}</p>
+    <div class="items-id">
+      i
+      <p class="item-id">{{ itemData.id }}</p>
+    </div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 5px">
+    <!-- <button (click)="completedFunc(itemData)">
+      {{ itemData.isCompleted ? "done" : "not done" }}
+    </button> -->
+    <button (click)="remove(itemData.id)">delete</button>
+  </div>
+</div>

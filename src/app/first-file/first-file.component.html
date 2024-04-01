@@ -1,26 +1,16 @@
 <p>first-file works!</p>
 <div class="itemsHolder">
   @for (item of newTodoData; track item.id; let odd = $odd) {
-  <div class="itemCard" [class.Odd]="odd" [class.compo]="item.isCompleted">
-    <div>
-      <p>{{ item.todo }}</p>
-      <div class="items-id">
-        i
-        <p class="item-id">{{ item.id }}</p>
-      </div>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 5px">
-      <button (click)="completed(item)">
-        {{ item.isCompleted ? "done" : "not done" }}
-      </button>
-      <button (click)="deleteItem(item.id)">delete</button>
-    </div>
-  </div>
+  <app-todo
+    [itemData]="item"
+    [oddEl]="odd"
+    [isCompletedEl]="item.isCompleted"
+    [deleteItemFunc]="deleteItem"
+  >
+  </app-todo>
   } @empty {
   <p>There are no items.</p>
   }
 </div>
 <input [(ngModel)]="newTodo" type="text" />
 <button (click)="addItem()">Add Item</button>
-
-<app-child-file></app-child-file>

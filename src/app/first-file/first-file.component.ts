@@ -2,23 +2,25 @@ import { Component } from '@angular/core';
 import * as uuid from 'uuid';
 import { todoData } from './data';
 import { FormsModule } from '@angular/forms';
-import { ChildFileComponent } from './child-file/child-file.component';
+import { TodoComponent } from './todo/todo.component';
 @Component({
   selector: 'app-first-file',
   standalone: true,
-  imports: [FormsModule, ChildFileComponent],
+  imports: [FormsModule, TodoComponent],
+
   templateUrl: './first-file.component.html',
   styleUrl: './first-file.component.scss',
 })
 export class FirstFileComponent {
   newTodoData = todoData;
 
-  logData() {
-    console.log(this.newTodoData);
+  deleteItem(todoID: string) {
+    console.log('id we got in the parent ', todoID);
+    this.newTodoData = this.newTodoData.filter((item) => item.id !== todoID);
   }
 
-  deleteItem(id: string) {
-    this.newTodoData = this.newTodoData.filter((item) => item.id !== id);
+  ngOnInit() {
+    console.log('Todo Data:', this.newTodoData);
   }
 
   completed(data: any) {

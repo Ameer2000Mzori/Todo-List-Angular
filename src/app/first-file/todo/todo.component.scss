@@ -1,0 +1,20 @@
+.Odd {
+  background-color: blue;
+}
+
+.compo {
+  background-color: green;
+  text-decoration: line-through;
+}
+
+.items-id {
+  .item-id {
+    display: none;
+  }
+  &:hover {
+    .item-id {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
