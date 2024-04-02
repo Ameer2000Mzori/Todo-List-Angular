@@ -18,7 +18,7 @@
 
 # 📖 About This Project <a name="about-project"></a>
 
-> Navigation-Nation is a website crafted using HTML, CSS, and JavaScript, with the added benefit of linters to address any errors in the code, and it's built with Webpack as its primary focus. This project leverages advanced CSS and JavaScript coding techniques. Feel free to explore the demo link.
+> "Todo-List-Angular" is a project created with Angular and styled with Sass, utilizing TypeScript for type safety. Please download the project or check out demo images for a better understanding.
 
 # Sample Of Website <a name="Sample-Of-Website"></a>
 
