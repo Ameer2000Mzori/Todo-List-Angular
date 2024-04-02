@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
 @Component({
   selector: 'app-todo',
   standalone: true,
@@ -8,20 +7,17 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './todo.component.scss',
 })
 export class TodoComponent {
-  @Input()
-  oddEl: any;
+  @Input() oddEl: any;
 
-  @Input()
-  isCompletedEl: any;
+  @Input() isCompletedEl: any;
 
-  @Input()
-  itemData: any;
+  @Input() itemData: any;
 
-  // @Input() completedFunc!: Function;
   @Output() deleteItemEvent: EventEmitter<string> = new EventEmitter<string>();
 
   @Output() completeItemEvent: EventEmitter<string> =
     new EventEmitter<string>();
+
   remove(id: string) {
     console.log('id we got before parent', id);
     this.deleteItemEvent.emit(id);

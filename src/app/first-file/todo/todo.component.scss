@@ -1,3 +1,14 @@
+.itemCard {
+  width: 300px;
+  height: 70px;
+  background-color: sandybrown;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .Odd {
   background-color: blue;
 }

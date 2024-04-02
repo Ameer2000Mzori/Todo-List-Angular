@@ -1,5 +1,7 @@
 <p>first-file works!</p>
 <div class="itemsHolder">
+  <p>today date {{ date | date : "MM, dd, yyyy" | uppercase }}</p>
+
   @for (item of newTodoData; track item.id; let odd = $odd) {
   <app-todo
     [itemData]="item"
