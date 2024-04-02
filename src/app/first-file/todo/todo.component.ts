@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { stringify } from 'uuid';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -19,11 +18,17 @@ export class TodoComponent {
   itemData: any;
 
   // @Input() completedFunc!: Function;
-  @Input()
-  deleteItemFunc!: Function;
+  @Output() deleteItemEvent: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output() completeItemEvent: EventEmitter<string> =
+    new EventEmitter<string>();
   remove(id: string) {
     console.log('id we got before parent', id);
-    this.deleteItemFunc(id);
+    this.deleteItemEvent.emit(id);
+  }
+
+  complete(data: any) {
+    console.log('id we got before parent', data);
+    this.completeItemEvent.emit(data);
   }
 }

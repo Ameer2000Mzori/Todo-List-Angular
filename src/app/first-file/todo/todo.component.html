@@ -7,9 +7,9 @@
     </div>
   </div>
   <div style="display: flex; flex-direction: column; gap: 5px">
-    <!-- <button (click)="completedFunc(itemData)">
+    <button (click)="complete(itemData)">
       {{ itemData.isCompleted ? "done" : "not done" }}
-    </button> -->
+    </button>
     <button (click)="remove(itemData.id)">delete</button>
   </div>
 </div>

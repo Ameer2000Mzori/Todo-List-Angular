@@ -5,7 +5,8 @@
     [itemData]="item"
     [oddEl]="odd"
     [isCompletedEl]="item.isCompleted"
-    [deleteItemFunc]="deleteItem"
+    (deleteItemEvent)="deleteItem($event)"
+    (completeItemEvent)="completed($event)"
   >
   </app-todo>
   } @empty {
